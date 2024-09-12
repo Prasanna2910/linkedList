@@ -27,7 +27,6 @@ class LinkedList:
     def removeDuplicate(self):
         if self.head is None:
             return None
-        
         current = self.head
         while current and current.next:
             if current.data == current.next.data:
