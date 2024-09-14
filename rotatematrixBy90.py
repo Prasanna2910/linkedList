@@ -11,8 +11,8 @@ for i in range(n):
         store[i][j],store[j][i] = store[j][i],store[i][j]
 
 for i in range(n):
-    for j in range(n//2):
-        store[i][n-1-j],store[n-1-j][i] = store[n-1-j][i], store[i][n-1-j]
+    for j in range(n // 2):
+        store[i][j], store[i][n - 1 - j] = store[i][n - 1 - j], store[i][j]
 
 for i in store:
     print(*i)
