@@ -1,4 +1,4 @@
-lass Node:
+class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -13,7 +13,7 @@ class LinkedList:
             self.head = newNode
         else:
             current = self.head
-            while current.next:
+            while current.next: 
                 current = current.next
             current.next = newNode
     
