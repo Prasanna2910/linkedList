@@ -15,29 +15,25 @@ class LinkedList:
             while temp.next:
                 temp = temp.next
             temp.next = newNode
+    def middle(self):
+        if not self.head or not self.head.next:
+            return self.head
+        slow = self.head
+        fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
     def display(self):
         temp = self.head
         while temp:
             print(temp.data,end = " ")
             temp = temp.next
         print()
-    def checking(self):
-        temp = self.head
-        while temp:
-            prev = temp
-            check = temp.next
-            while check:
-                if check.data == temp.data:
-                    prev.next = check.next
-                    
-                else:
-                    prev = check
-                check = check.next
-            temp = temp.next
 my = LinkedList()
 a = int(input())
 arr = list(map(int,input().split()))
 for i in range(len(arr)):
     my.insert(arr[i])
-my.checking()
-my.display()
+middleele = my.middle()
+print(middleele.data)

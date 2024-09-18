@@ -10,35 +10,39 @@ class LinkedList:
         if self.head is None:
             self.head = newNode
         else:
-            newNode.next = self.head
-            self.head = newNode
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = newNode
     def finding(self,tar):
+        # if self.head is None:*
+        #     return "NO PAIRS"
         i = self.head
-        found = False
         store = []
+        found = False
         while i:
             j = self.head
             while j:
-                if i.data+j.data == tar and i.data not in store and j.data not in store:
+                if i!=j and i.data+j.data == tar and i.data not in store and j.data not in store:
                     store.append(i.data)
-                    store.append(j.data)
-                    # return store
-                    # print(i.data,j.data)
+                    store.append(j.data)    
                     found = True
-                    # break
                 j = j.next
             i = i.next
         print(*store)
+        if not store:
+            print(-1)
     def display(self):
         temp = self.head
         while temp:
             print(temp.data,end = " ")
             temp = temp.next
+        print()
 myList = LinkedList()
 a,b = map(int,input().split())
 arr = list(map(int,input().split()))
-for i in range(a-1,-1,-1):
+for i in range(len(arr)):
     myList.insert(arr[i])
-
 myList.finding(b)
-    # print("True")
+# myList.display()
+        

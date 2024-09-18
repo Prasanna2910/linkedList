@@ -1,25 +1,24 @@
-# Use print() to print to the console
-a = list(map(int, input().split()))
-five, ten = 0, 0
-
-for i in range(len(a)):
-    if a[i] == 5:
-        five += 1
-    elif a[i] == 10:
-        if five >= 1:
-            five -= 1
-            ten += 1
+a = int(input())
+arr = list(map(int,input().split()))
+five = 0
+ten = 0
+for i in arr:
+    if i == 5:
+        five = five+1
+    elif i == 10:
+        if five>=1:
+            five-=1
+            ten+=1
         else:
-            print("false")
+            print("False")
             exit()
-    elif a[i] == 20:
-        if ten >= 1 and five >= 1:
-            ten -= 1
-            five -= 1
-        elif five >= 3:
-            five -= 3
+    elif i == 20:
+        if five>=3:
+            five-=3
+        elif ten>=1 and five>=1:
+            ten-=1
+            five-=1
         else:
-            print("false")
+            print("False")
             exit()
-
-print("true")
+print("True")    
