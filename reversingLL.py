@@ -1,10 +1,10 @@
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
+        self.prev = None
 
-
-class LinkedList:
+class DoublyLinkedList:
     def __init__(self):
         self.head = None
 
@@ -15,19 +15,19 @@ class LinkedList:
         while curr:
             temp = curr.next
             curr.next = prev
+            curr.prev = temp
             prev = curr
             curr = temp
-
         self.head = prev
-        # return self.head
 
     def insert(self, data):
         newNode = Node(data)
-
+ 
         if not self.head:
             self.head = newNode
         else:
             newNode.next = self.head
+            self.head.prev = newNode
             self.head = newNode
 
     def display(self):
@@ -35,20 +35,12 @@ class LinkedList:
         while temp:
             print(temp.data, end=" ")
             temp = temp.next
+        print()
 
-# Create a linked list object
-mylist = LinkedList()
-
-# Get input from the user
+mylist = DoublyLinkedList()
 a = int(input())
 arr = list(map(int, input().split()))
-
-# Insert elements into the linked list in reverse order
-for i in range(len(arr)-1,-1,-1):
+for i in range(len(arr)-1, -1, -1):
     mylist.insert(arr[i])
-
-# Reverse the linked list
 mylist.reverse()
-
-# Display the linked list
 mylist.display()
