@@ -9,4 +9,4 @@ else:
         for j in range(i, l):
             store = store + arr[j]
             ma = max(store, ma)
-    print(ma)
+    print(ma)  

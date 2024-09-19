@@ -33,7 +33,7 @@ class LinkedList:
                 else:
                     prev = check
                 check = check.next
-            temp = temp.next
+            temp = temp.next 
 my = LinkedList()
 a = int(input())
 arr = list(map(int,input().split()))

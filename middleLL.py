@@ -36,4 +36,7 @@ arr = list(map(int,input().split()))
 for i in range(len(arr)):
     my.insert(arr[i])
 middleele = my.middle()
-print(middleele.data)
+if middleele:
+    print(middleele.data)
+else:
+    print("list is empty")
