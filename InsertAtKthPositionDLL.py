@@ -40,9 +40,9 @@ class LinkedList:
                 return
             temp = temp.next
             count = count + 1
-        if tar>n:
-            temp.next = newnode
-            newnode.prev = temp
+        # if tar>n:
+        #     temp.next = newnode
+        #     newnode.prev = temp
     def display(self):
         temp = self.head
         while temp:

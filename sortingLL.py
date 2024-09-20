@@ -82,3 +82,25 @@ for i in range(len(a)):
 
 myList.head = myList.sortList() 
 myList.display()
+
+
+
+def bubble_sort_linked_list(head):
+    if not head or not head.next:
+        return head  # If the list is empty or has one element, no sorting is needed.
+
+    swapped = True
+    while swapped:
+        swapped = False
+        current = head
+        prev = None
+
+        while current and current.next:
+            if current.value > current.next.value:
+                # Swap the values of the adjacent nodes
+                current.value, current.next.value = current.next.value, current.value
+                swapped = True
+            prev = current
+            current = current.next
+
+    return head

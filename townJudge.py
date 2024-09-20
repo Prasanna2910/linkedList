@@ -23,6 +23,7 @@ for i in range(1,numberOfPeople+1):
     if counting(store2,i) == numberOfPeople-1 and i not in store1:
         flag = True
         s = i
+        break
     else:
         flag = False
 if flag:

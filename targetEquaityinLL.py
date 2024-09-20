@@ -15,8 +15,7 @@ class LinkedList:
                 temp = temp.next
             temp.next = newNode
     def finding(self,tar):
-        # if self.head is None:*
-        #     return "NO PAIRS"
+        
         i = self.head
         store = []
         found = False
